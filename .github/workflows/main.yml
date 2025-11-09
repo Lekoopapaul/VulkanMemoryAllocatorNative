@@ -5,11 +5,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [aarch64-windows-gnu,x64-86-windows-gnu,aarch64-linux-musl,x64-86-linux-musl]
+        target: [aarch64-windows-gnu,x86_64-windows-gnu,aarch64-linux-musl,x86_64-linux-musl]
     runs-on: ubuntu-latest
     name: Zig ${{ matrix.target }}
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: recursive
       - name: Setup Zig
         uses: mlugg/setup-zig@v2
         with:
