@@ -11,7 +11,7 @@ pub fn build(b: *std.Build) void {
     const optimize = b.standardOptimizeOption(.{});
 
     const lib = b.addLibrary(.{
-        .name = "VMACI",
+        .name = "VMA",
         .linkage = .dynamic,
         .root_module = b.createModule(.{
             .root_source_file = null,
